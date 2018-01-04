@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+cd $1
+egrep -c "^django-compressor" requirements.txt
