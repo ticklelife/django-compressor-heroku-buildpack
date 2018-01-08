@@ -1,9 +1,9 @@
 #!/bin/bash
 
 set -e
-cd $1
+cd "$1" || exit 1
 
-if [ -f requirements.txt ] && [ `egrep -c "^django-compressor" requirements.txt` -gt 0 ]; then
+if [ -f requirements.txt ] && [ "$(grep -c -E "^django-compressor" requirements.txt)" -gt 0 ]; then
   echo django-compressor
   exit 0
 else
