@@ -2,4 +2,10 @@
 
 set -e
 cd $1
-egrep -c "^django-compressor" requirements.txt
+
+if [ -f requirements.txt ] && [ `egrep -c "^django-compressor" requirements.txt` -gt 0 ]; then
+  echo django-compressor
+  exit 0
+else
+  exit 1
+fi
