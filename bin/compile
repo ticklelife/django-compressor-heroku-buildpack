@@ -14,4 +14,4 @@ export_env_dir() {
   fi
 }
 echo "-----> Running django-compressor"
-# python manage.py compress --force
+python manage.py compress --force
